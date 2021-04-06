@@ -10,6 +10,8 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  searchProduct() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
