@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:searchdelegate_article/data/product_data.dart';
+import 'package:searchdelegate_article/delegates/product_search_delegate.dart';
 import 'package:searchdelegate_article/widgets/product_card_widget.dart';
 
 class HomeView extends StatefulWidget {
@@ -10,7 +11,9 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  searchProduct() {}
+  searchProduct() {
+    showSearch(context: context, delegate: ProductSearchDelegate());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,9 @@ class _HomeViewState extends State<HomeView> {
         title: Text('Products'),
         actions: [
           IconButton(
-              tooltip: 'Search', icon: Icon(Icons.search), onPressed: () {})
+              tooltip: 'Search',
+              icon: Icon(Icons.search),
+              onPressed: searchProduct)
         ],
       ),
       body: GridView.builder(

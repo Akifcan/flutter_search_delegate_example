@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:searchdelegate_article/models/product_model.dart';
+import '../core/string_extensions.dart';
 
 class ProductCardWidget extends StatelessWidget {
   final ProductModel product;
@@ -23,7 +24,7 @@ class ProductCardWidget extends StatelessWidget {
         ),
         Wrap(
           children: [
-            Text(this.product.brand,
+            Text(this.product.brand.firstLetterUpper,
                 style: Theme.of(context)
                     .textTheme
                     .headline6
